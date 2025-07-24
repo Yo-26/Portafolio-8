@@ -1,0 +1,388 @@
+/* Reset básico para eliminar márgenes y paddings predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Suaviza el scroll al hacer clic en enlaces */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #000000 0%, #333333 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* Nuevo contenedor principal para todo el contenido de la página */
+.page-content {
+    width: 90%;
+    max-width: 1200px; /* Ancho máximo para el diseño */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px 0; /* Un poco de padding arriba y abajo */
+}
+
+/* El antiguo .container ahora solo envuelve hero y cards */
+.container {
+    width: 100%; /* Ocupa todo el ancho del .page-content */
+    padding: 0; /* Eliminamos el padding aquí, ya que .page-content lo tiene */
+    /* border-radius: 15px; */ /* Mantener si quieres bordes redondeados solo para hero/cards */
+}
+
+/* --- Sección Superior (Hero) --- */
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Por defecto apilado para móviles */
+    align-items: center; /* Centra los ítems */
+    justify-content: space-between;
+    padding: 40px 20px;
+    margin-bottom: 50px; /* Espacio entre la sección superior y las tarjetas */
+    position: relative;
+}
+
+.hero-text {
+    text-align: center; /* Centrado para móviles */
+    margin-bottom: 30px; /* Espacio entre texto e imagen en móvil */
+}
+
+.hero-text h1 {
+    font-size: 3.5em; /* Tamaño grande para el nombre */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.hero-text .subtitle {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #bbbbbb;
+    letter-spacing: 2px;
+}
+
+.hero-image {
+    width: 250px;
+    height: 300px;
+    background-image: url('Yofray.jpg'); /* Tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* --- Sección Inferior (Tarjetas) --- */
+.cards-section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
+    justify-content: center; /* Centra las tarjetas cuando no llenan toda la línea */
+    gap: 30px; /* Espacio entre las tarjetas */
+    padding: 20px 0;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    flex-basis: 300px; /* Ancho base para cada tarjeta */
+    flex-grow: 1; /* Permite que las tarjetas crezcan */
+    max-width: calc(33.33% - 20px); /* Asegura 3 por fila */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.icon-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.icon-placeholder .icon {
+    width: 60px;
+    height: 60px;
+    stroke: #ffffff;
+}
+
+.card h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #e0e0e0;
+}
+
+/* Separador visual entre la sección de tarjetas y la información */
+.section-separator {
+    width: 80%;
+    max-width: 600px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #6a0dad, transparent);
+    margin: 80px auto;
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.5);
+}
+
+/* --- Secciones de Información --- */
+.info-section {
+    padding: 80px 20px;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+    scroll-margin-top: 70px;
+}
+
+.info-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.info-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.info-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #bbbbbb;
+    margin-bottom: 20px;
+}
+
+.info-content ul {
+    list-style-type: disc;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.info-content ul li {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 3px solid #6a0dad;
+}
+
+/* --- Estilos para las imágenes de habilidades --- */
+.habilidades-imagenes {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espacio entre las imágenes */
+    margin-top: 30px;
+    flex-wrap: nowrap; /* Crucial para el efecto de compresión */
+    overflow-x: auto; /* Permite scroll horizontal si el contenido desborda */
+    padding-bottom: 5px;
+}
+
+.habilidades-imagenes img {
+    /* MODIFICADO: Eliminar altura fija y object-fit para evitar recortes */
+    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+    object-fit: contain; /* Para asegurar que la imagen completa se vea sin recortarse. Puede dejar barras si la proporción del contenedor no coincide */
+    display: block; /* Importante para que height: auto funcione correctamente */
+    max-width: 100%; /* Asegura que la imagen no desborde su contenedor flex */
+
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out; /* Transición suave */
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+
+    /* Propiedades Flexbox para el crecimiento/compresión */
+    flex-basis: 150px; /* Ancho base inicial */
+    flex-grow: 1;     /* Permite crecer */
+    flex-shrink: 1;   /* Permite encogerse */
+    min-width: 80px;  /* Mínimo para que no sean demasiado pequeñas al comprimirse */
+}
+
+.habilidades-imagenes img:hover {
+    flex-grow: 8; /* Menos agresivo que 15, pero aún dominante */
+    max-width: 400px; /* Aumentamos el max-width para la imagen hovered en tamaños intermedios */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+
+/* --- Media Queries para Responsividad --- */
+
+/* Reglas para Tablet y Laptop Pequeña (768px a 1399px) */
+@media (min-width: 768px) and (max-width: 1399px) {
+    .hero-section {
+        flex-direction: row;
+        text-align: left;
+    }
+    .hero-text {
+        text-align: left;
+        margin-right: 50px;
+        margin-bottom: 0;
+        flex-grow: 1;
+    }
+    .hero-text h1 {
+        font-size: 4.5em;
+    }
+    .hero-image {
+        width: 300px;
+        height: 350px;
+    }
+    .cards-section {
+        justify-content: space-between;
+    }
+    .card {
+        flex-basis: calc(33.33% - 20px);
+        max-width: 400px;
+    }
+
+    /* Habilidades imágenes para este rango */
+    .habilidades-imagenes {
+        flex-wrap: nowrap; /* Mantenemos la compresión en una línea */
+        justify-content: center;
+        gap: 25px;
+    }
+    .habilidades-imagenes img {
+        height: auto; /* MODIFICADO */
+        flex-basis: calc(33.33% - 20px);
+        max-width: 350px;
+        min-width: 100px;
+    }
+    .habilidades-imagenes img:hover {
+        flex-grow: 5; /* Un crecimiento significativo pero adaptado a este rango */
+        max-width: 500px; /* Permite que la imagen hovered sea más ancha en este rango */
+    }
+}
+
+/* Reglas para Laptop/Escritorio Muy Grandes (1400px en adelante) */
+@media (min-width: 1400px) {
+    .hero-section {
+        flex-direction: row;
+        text-align: left;
+        margin-bottom: 80px;
+    }
+    .hero-text h1 {
+        font-size: 5.5em;
+    }
+    .hero-image {
+        width: 350px;
+        height: 400px;
+    }
+    .cards-section {
+        justify-content: space-between;
+        gap: 40px;
+    }
+    .card {
+        flex-basis: calc(33.33% - 27px);
+        max-width: 450px;
+    }
+
+    /* Habilidades imágenes para este rango */
+    .habilidades-imagenes {
+        gap: 35px;
+    }
+    .habilidades-imagenes img {
+        height: auto; /* MODIFICADO */
+        flex-basis: 220px;
+        min-width: 100px;
+        max-width: 400px;
+    }
+    .habilidades-imagenes img:hover {
+        flex-grow: 12;
+        max-width: 700px;
+    }
+}
+
+/* Reglas para Móviles (hasta 767px) */
+@media (max-width: 767px) {
+    .hero-text h1 {
+        font-size: 2.8em;
+    }
+    .hero-text .subtitle {
+        font-size: 1em;
+    }
+    .hero-image {
+        width: 200px;
+        height: 250px;
+    }
+    .cards-section {
+        justify-content: center;
+    }
+    .card {
+        width: 90%;
+        padding: 20px;
+        min-height: 200px;
+        flex-basis: auto;
+        max-width: none;
+    }
+
+    /* Habilidades imágenes para este rango */
+    .habilidades-imagenes {
+        flex-wrap: wrap; /* Permitimos que se envuelvan a 2 columnas */
+        justify-content: center;
+        gap: 15px;
+    }
+    .habilidades-imagenes img {
+        height: auto; /* MODIFICADO */
+        flex-basis: calc(50% - 15px);
+        min-width: 100px;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    .habilidades-imagenes img:hover {
+        transform: scale(1.1); /* Zoom más simple en 2 columnas */
+        flex-grow: 1.5;
+        max-width: 60%;
+        z-index: 2;
+    }
+}
+
+/* Reglas para Móviles Muy Pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    .habilidades-imagenes {
+        flex-direction: column; /* Apila las imágenes verticalmente */
+        align-items: center;
+        gap: 15px;
+        flex-wrap: nowrap;
+        overflow-x: hidden;
+    }
+    .habilidades-imagenes img {
+        width: 80%;
+        max-width: 250px;
+        height: auto; /* MODIFICADO */
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    .habilidades-imagenes img:hover {
+        transform: scale(1.05); /* Zoom muy sutil para apiladas */
+        flex-grow: 0;
+        max-width: 85%;
+    }
+}
